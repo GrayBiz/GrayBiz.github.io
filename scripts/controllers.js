@@ -1,5 +1,0 @@
-grayApp.controller('toolbar', [function(){
-    
-    
-    
-}]);
