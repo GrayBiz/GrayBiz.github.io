@@ -29,6 +29,22 @@
         function selectItem() {};
 
 
+        //bottom contact sheet controller
+        function contactController ($mdBottomSheet){
+            this.contactName = "Unknown";
+            this.contactPhone = "Blank Phone";
+            this.contactEmail = "Blank Email";
+            this.contactMessage = "Blank Message";
+            this.action = {name: "Email", icon: 'email', icon_url: 'images/icons/envelope.svg'};
+            this.contactMe = function(action) {
+                //implement contact functions
+                
+                
+                //Close the bottom sheet when function fires
+                $mdBottomSheet.hide(action);
+            }   
+        }
+        
     }
 
 }());
