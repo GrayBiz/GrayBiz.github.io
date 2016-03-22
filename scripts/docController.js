@@ -16,6 +16,8 @@
         self.subsections = [];
         self.selectSection = selectItem;
         self.toggleSections = toggleSectionList;
+        self.lineBreak = "none";
+        
 
         //Load all document content
 
@@ -37,6 +39,7 @@
         //Select current section
         function selectItem(section) {
             self.selected = angular.isNumber(section) ? $scope.sections[section] : section;
+            self.lineBreak = "block";
         };
 
 
