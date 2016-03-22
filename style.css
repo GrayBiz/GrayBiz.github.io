@@ -28,6 +28,10 @@
     height: 60px;
 }
 
+.menu-button {
+    color: #fff !important;
+}
+
 .content {
     background: lightgray;
 }
