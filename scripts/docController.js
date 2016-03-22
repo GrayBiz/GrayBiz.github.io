@@ -17,6 +17,7 @@
         self.selectSection = selectItem;
         self.toggleSections = toggleSectionList;
         self.lineBreak = "none";
+        self.hidden = "block";
         self.contact = startContact;
 
 
@@ -41,6 +42,7 @@
         function selectItem(section) {
             self.selected = angular.isNumber(section) ? $scope.sections[section] : section;
             self.lineBreak = "block";
+            self.hidden = "none";
             console.log(self.selected);
         };
 
