@@ -1,0 +1,31 @@
+.title {
+    color: #fff;
+    padding-left: 10px;
+}
+
+.my-name {
+    margin: auto;
+}
+
+.toolbar-button {
+    margin: 20px;
+    font-size: 20px;
+}
+
+.section-title {
+    padding-left: 10px;
+}
+
+.section-content {
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.title-bar {
+    height: 60px;
+}
+
+.content {
+    background: lightgray;
+}

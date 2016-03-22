@@ -9,8 +9,9 @@
 
     function docService($q){
         var doc = [
+            
             {
-                section: 'Objective',
+                section: ' Objective',
                 content: 'Seeking a Front End Web Development position at a fast moving and forward thinking company.'
             },
             {
@@ -27,7 +28,7 @@
                 ]
             },
             {
-                section: 'Experience',
+                section: ' Experience',
                 subsections: [
                     {
                         title: 'MyDealerLot',
@@ -68,7 +69,7 @@
                 ]
             },
             {
-                section: 'Education',
+                section: ' Education',
                 subsections: [
                     {
                         title: 'Georgia Institute of Technology, Scheller College of Business',
@@ -84,7 +85,7 @@
                 ]
             },
             {
-                section: 'Interests',
+                section: ' Interests',
                 subsections: [
                     {
                         title: 'Volunteer',

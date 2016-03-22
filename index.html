@@ -33,34 +33,39 @@
 
     <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" ng-click="dc.toggleSections()" aria-label="Show Section List" md-is-locked-open="$mdMedia('gt-sm')">
 
-        <md-toolbar class="md-whiteframe-z1">
-            <h3>Sections</h3>
+        <md-toolbar class="md-whiteframe-z1 title-bar">
+            <h3 class="title">Sections</h3>
         </md-toolbar>
 
         <md-list>
             <md-list-item ng-repeat="sect in dc.sections">
-                <md-button ng-click="dc.selectSection(sect)" ng-class="{'selected' : sect === ul.selected }">
+                <md-button ng-click="dc.selectSection(sect)" ng-class="{'selected' : sect === dc.selected }" class="toolbar-button">
                     {{sect.section}}
                 </md-button>
+            </md-list-item>
+            <hr />
+            <md-list-item>
+                <md-button ng-click="dc.contact()" class="toolbar-button" id="contact-button">Let's get in touch</md-button>
             </md-list-item>
         </md-list>
 
     </md-sidenav>
 
 
-    <div flex layout="column" tabindex="-1" role="main" class="md-whiteframe-z2">
+    <div flex layout="column" tabindex="-1" role="main" class="md-whiteframe-z2 ">
 
-        <md-toolbar layout="row" class="md-whiteframe-z1">
+        <md-toolbar layout="row" class="md-whiteframe-z1 title-bar">
             <md-button id="show-hide" class="menu" hide-gt-sm ng-click="dc.toggleSections()" aria-label="Show Section List">
                 <md-icon md-svg-icon="hamburger"></md-icon>
             </md-button>
-            <h3>Gray Karegeannes</h3>
+            <h3 class="title my-name">Gray Karegeannes</h3>
+<!--            <md-button id="contact" class="manu" md-no-ink ng-click="dc.contact()" aria-label="Contact Gray Karegeannes"></md-button>-->
         </md-toolbar>
 
         <md-content flex id="content">
-            <h2>{{dc.selected.section}}</h2>
+            <h2 class="section-title">{{dc.selected.section}}</h2>
             <hr style="display: {{dc.lineBreak}}">
-            <h4>{{dc.selected.content}}</h4>
+            <h4 class="section-content">{{dc.selected.content}}</h4>
 
             <div ng-repeat="ss in dc.selected.subsections">
 
