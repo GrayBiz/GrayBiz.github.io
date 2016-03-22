@@ -29,3 +29,25 @@
 .content {
     background: lightgray;
 }
+
+.subsection-title {
+    font-weight: bold;
+}
+
+.subsection-job {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
+    padding-bottom: 5px;
+    
+}
+
+.subsection-location {
+    font-weight: bold;    
+}
+
+.subsection-timeframe {
+    font-style: italic;
+    float: right;
+    
+}
