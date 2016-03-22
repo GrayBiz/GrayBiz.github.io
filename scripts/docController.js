@@ -3,17 +3,19 @@
     angular
         .module('doc')
         .controller('docController', [
-            'docService', '$mdDialog', '$mdMedia', '$mdBottomSheet', '$log', '$q',
+            'docService', '$mdSidenav', '$mdDialog', '$mdMedia', '$mdBottomSheet', '$log', '$q',
             docController
     ]);
 
 
-    function docController(docService, $mdDialog, $mdMedia, $mdBottomSheet, $log) {
+    function docController(docService, $mdSidenav, $mdDialog, $mdMedia, $mdBottomSheet, $log) {
         var self = this;
 
         self.selected = null;
         self.sections = [];
-        self.selectSection = selectSection;
+        self.subsections = [];
+        self.selectSection = selectItem;
+        self.toggleSections = toggleSectionList;
 
         //Load all document content
 
@@ -21,10 +23,17 @@
             .loadAllDoc()
             .then(function (doc) {
                 self.sections = [].concat(doc);
+                
             });
 
         //Internal Methods
 
+        //Toggle left section list
+        function toggleSectionList() {
+          $mdSidenav('left').toggle();  
+        };
+        
+        
         //Select item and expand
         function selectItem() {};
 
