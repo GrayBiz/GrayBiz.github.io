@@ -5,7 +5,7 @@
     <title>Gray Karegeannes</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" /> 
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 
 
@@ -30,13 +30,13 @@
 </head>
 
 <body ng-app="resumeApp" layout="row" ng-controller="docController as dc" ng-cloak>
-   
-    <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" ng-click="dc.toggleSections()" aria-label = "Show Section List" md-is-locked-open="$mdMedia('gt-sm')">
-   
+
+    <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" ng-click="dc.toggleSections()" aria-label="Show Section List" md-is-locked-open="$mdMedia('gt-sm')">
+
         <md-toolbar class="md-whiteframe-z1">
             <h3>Sections</h3>
         </md-toolbar>
-        
+
         <md-list>
             <md-list-item ng-repeat="sect in dc.sections">
                 <md-button ng-click="dc.selectSection(sect)" ng-class="{'selected' : sect === ul.selected }">
@@ -44,19 +44,38 @@
                 </md-button>
             </md-list-item>
         </md-list>
-        
+
     </md-sidenav>
 
-    
+
     <div flex layout="column" tabindex="-1" role="main" class="md-whiteframe-z2">
-    
+
         <md-toolbar layout="row" class="md-whiteframe-z1">
             <md-button id="show-hide" class="menu" hide-gt-sm ng-click="dc.toggleSections()" aria-label="Show Section List">
                 <md-icon md-svg-icon="hamburger"></md-icon>
             </md-button>
             <h3>Gray Karegeannes</h3>
         </md-toolbar>
-        
+
+        <md-content flex id="content">
+            <h2>{{dc.selected.section}}</h2>
+            
+            <div ng-repeat="ss in sect.subsections">
+
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{s.section}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+
+                    </md-card-content>
+
+                </md-card>
+            </div>
+        </md-content>
+
     </div>
 
 
@@ -72,7 +91,7 @@
     <script src="scripts/doc.js"></script>
     <script src="scripts/docService.js"></script>
     <script src="scripts/docController.js"></script>
-<!--    <script src="scripts/directives.js"></script>-->
+    <!--    <script src="scripts/directives.js"></script>-->
 
 
 

@@ -34,8 +34,10 @@
         };
         
         
-        //Select item and expand
-        function selectItem() {};
+        //Select current section
+        function selectItem(section) {
+            self.selected = angular.isNumber(section) ? $scope.sections[section] : section;
+        };
 
 
         //bottom contact sheet controller
