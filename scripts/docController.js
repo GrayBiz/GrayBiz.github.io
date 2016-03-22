@@ -27,6 +27,7 @@
             .loadAllDoc()
             .then(function (doc) {
                 self.sections = [].concat(doc);
+                self.selected = doc[0];
 
             });
 
