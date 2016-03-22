@@ -3,12 +3,12 @@
     angular
         .module('doc')
         .controller('docController', [
-            'docService', '$mdSidenav', '$mdDialog', '$mdMedia', '$mdBottomSheet', '$log', '$q',
+            'docService', '$scope', '$mdSidenav', '$mdDialog', '$mdMedia', '$mdBottomSheet', '$log', '$q',
             docController
     ]);
 
 
-    function docController(docService, $mdSidenav, $mdDialog, $mdMedia, $mdBottomSheet, $log) {
+    function docController(docService, $scope, $mdSidenav, $mdDialog, $mdMedia, $mdBottomSheet, $log) {
         var self = this;
 
         self.selected = null;
@@ -50,6 +50,8 @@
         //set up contact page
         function startContact() {
             
+            var that = this;
+            
             $mdBottomSheet.show({
                 controllerAs: 'cp',
                 templateUrl: './views/contact.html',
@@ -59,21 +61,36 @@
 
             //bottom contact sheet controller
             function contactController($mdBottomSheet) {
-                this.contactName = "Unknown";
-                this.contactPhone = "Blank Phone";
-                this.contactEmail = "Blank Email";
-                this.contactMessage = "Blank Message";
+                
+                
+                this.firstName = "";
+                this.lastName = "";
+                this.contactPhone = "";
+                this.contactEmail = "";
+                this.contactMessage = "";
+                this.contactCompany = "";
+                this.user = {};
                 this.action = {
                     name: "Email",
                     icon: 'email',
                     icon_url: 'images/icons/envelope.svg'
                 };
-                this.contactMe = function (action) {
+                this.contactMe = function () {
                     //implement contact functions
+                   
+                    var mailto = "mailto:graybiz@karegeannes.com";
+                    var completeMessage = this.contactMessage + "%0D%0A%0D%0A" + this.firstName + "%20" + this.lastName + "%0D%0A" + this.contactCompany + "%0D%0A" + this.contactEmail + "%0D%0A" + this.contactPhone + "%0D%0A";
+                    
+                    mailto += "?bcc=" + this.contactEmail + "&subject=[Inquiry] Let's get in touch!&body=" + completeMessage;
+                    
+                    console.log("send button firing!")
+                    console.log(this.firstName + " " + this.lastName);
 
-
+                    window.location.href = mailto;
+                    
+                    
                     //Close the bottom sheet when function fires
-                    $mdBottomSheet.hide(action);
+                    $mdBottomSheet.hide();
                 }
             };
         };

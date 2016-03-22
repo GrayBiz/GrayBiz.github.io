@@ -7,14 +7,42 @@
     <div layout-gt-sm="row">
         <md-input-container class="md-block" flex-gt-sm="">
             <label>First name</label>
-            <input ng-model="user.firstname">
+            <input required ng-model="cp.firstName" type="text">
         </md-input-container>
         <md-input-container class="md-block" flex-gt-sm="">
             <label>Last name</label>
-            <input ng-model="user.lastname">
+            <input required ng-model="cp.lastName" type="text">
         </md-input-container>
     </div>
     
 
+    <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm="">
+            <label>Email</label>
+            <input required ng-model="cp.contactEmail" type="text">
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm="">
+            <label>Phone Number</label>
+            <input ng-model="cp.contactPhone" type="text">
+        </md-input-container>
+    </div>
+    
+    <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm="">
+            <label>Company</label>
+            <input ng-model="cp.contactCompany" type="text">
+        </md-input-container>
+    </div>
+    
+    <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm="">
+            <label>Message</label>
+            <textarea ng-model="cp.contactMessage" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+    </div>
+    
+    <div layout-gt-sm="row">
+        <md-button ng-click="cp.contactMe()">Open in mail client</md-button>
+    </div>
     
 </md-bottom-sheet>
