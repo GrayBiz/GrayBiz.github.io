@@ -62,7 +62,7 @@
 <!--            <md-button id="contact" class="manu" md-no-ink ng-click="dc.contact()" aria-label="Contact Gray Karegeannes"></md-button>-->
         </md-toolbar>
 
-        <md-content flex id="content">
+        <md-content flex id="content" md-swipe-right="onSwipeRight()">
             <h2 class="section-title">{{dc.selected.section}}</h2>
             <hr style="display: {{dc.lineBreak}}">
             <h4 class="section-content">{{dc.selected.content}}</h4>

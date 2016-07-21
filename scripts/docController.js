@@ -21,6 +21,10 @@
         self.contact = startContact;
 
 
+        $scope.onSwipeRight = function() {
+            $mdSidenav('left').open();
+        }
+        
         //Load all document content
 
         docService
